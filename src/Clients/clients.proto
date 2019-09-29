@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Clients";
+
+package Clients;
+
+service ClientsGrpc {
+	rpc CreateClient (CreateClientRequest) returns (CreateClientReply);
+}
+
+message CreateClientRequest {
+	string Name = 1;
+}
+
+message CreateClientReply {
+	string Status = 1;
+}
