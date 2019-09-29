@@ -19,8 +19,9 @@ namespace ConsoleGrpcClient
             var channel = GrpcChannel.ForAddress(serverUrl, new GrpcChannelOptions { HttpClient = httpClient });
             var clientsService = new ClientsGrpc.ClientsGrpcClient(channel);
 
-            clientsService.CreateClient(new CreateClientRequest { Name = "Vlad Lutsenko" });
+            var reply = clientsService.CreateClient(new CreateClientRequest { Name = "Vlad Lutsenko" });
 
+            Console.WriteLine(reply.Status);
             Console.ReadLine();
         }
     }
