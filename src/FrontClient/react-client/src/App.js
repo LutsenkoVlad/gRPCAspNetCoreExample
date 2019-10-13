@@ -24,14 +24,12 @@ class App extends React.Component {
 
   callGrpcService = () => {
     const request = new CreateClientRequest();
-    request.name = this.state.inputValue;
-    request.Name = this.state.inputValue;
     request.setName(this.state.inputValue);
-  
+
     this.client.createClient(request, {}, (err, response) => {
       if (response == null) {
         console.log(err)
-      }else {
+      } else {
         console.log(response.array[0])
       }
     });

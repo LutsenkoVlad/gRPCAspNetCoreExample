@@ -12,7 +12,7 @@ namespace Clients.Services
         {
             return Task.FromResult(new CreateClientReply
             {
-                Status = "Sucess"
+                Status = $"{request.Name} was successfully cretead"
             });
         }
     }
